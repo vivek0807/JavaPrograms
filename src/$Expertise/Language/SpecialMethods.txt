@@ -1,0 +1,2 @@
+TO GET TYPE OF VARIABLE
+var1.getClass().getTypeName()

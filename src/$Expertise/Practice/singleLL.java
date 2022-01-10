@@ -1,6 +1,5 @@
 package $Expertise.Practice;
 
-import javafx.scene.chart.ValueAxis;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
