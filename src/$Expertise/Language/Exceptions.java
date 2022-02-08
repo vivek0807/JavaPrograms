@@ -11,7 +11,7 @@ public class Exceptions {
         }
         catch (ArithmeticException |NullPointerException |ArrayIndexOutOfBoundsException e){   //catches Arithmetic Exception
             if (e.toString().equals("java.lang.NullPointerException"))
-                System.out.println("Kya pagal admi hai ");
+                System.out.println("EceptionRaised ");
         }
 
     }
