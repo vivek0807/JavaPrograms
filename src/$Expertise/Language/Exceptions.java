@@ -1,6 +1,7 @@
 package $Expertise.Language;
 
 public class Exceptions {
+    protected String ExceptionClass;
     void generatesExceptions(){
         try{
            // System.out.println(100/0);
@@ -20,7 +21,5 @@ public class Exceptions {
         Exceptions e=new Exceptions();
         e.generatesExceptions();
     }
-
-
 
 }
