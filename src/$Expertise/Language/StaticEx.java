@@ -9,6 +9,7 @@ package $Expertise.Language;
  * --STATIC block will get executed directly AND IS THE FIRST THING( and are then executed in order) TO GET EXECUTED IF A CLASS'S METHOD IS CALLED OR OBJECTIFIED
  * --static keywords are not allowed inside any method
  * --String variables are initialised only after they are declared EVEN FROM OTHER CLASS
+ * STATIC FUNCTIONS CANNOT be called using object name, they can only be called using the CLASS NAME
  */
 
 class Example{
