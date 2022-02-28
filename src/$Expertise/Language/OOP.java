@@ -1,5 +1,6 @@
 package $Expertise.Language;
-
+//Clone implementation
+// The Clone interface has a Method clone that has to be implemented in the class that has to be cloned
 import org.w3c.dom.ls.LSOutput;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -65,9 +66,12 @@ class MenuBuilder{
         return basePrice;
     }
 
+    void Menubuilder(){
+        System.out.println("Coming from Menubuilder class");
+    }
 
 }
-class BillGenerator extends MenuBuilder{
+class BillGenerator extends MenuBuilder implements Cloneable{
     FoodGarage fg;
     int oneprice;
     public FoodGarage getFg() {
@@ -78,7 +82,7 @@ class BillGenerator extends MenuBuilder{
         this.fg = fg;
 
         if(fg.getCustomizations().equalsIgnoreCase("yes")){
-            MenuBuilder mb=new MenuBuilder();
+            MenuBuilder mb=new MenuBuilder( );
             this.oneprice=mb.getPrice(500,true,true,true);
         }
     }
@@ -88,8 +92,17 @@ class BillGenerator extends MenuBuilder{
     }
 
     @Override
+    void Menubuilder() {
+        System.out.println("Coming from bill generator class");
+    }
+
+    @Override
     public String toString() {
         return "Your Total bill is "+ this.totalWithGST();
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
     }
 }
 
@@ -108,12 +121,20 @@ public class OOP {
         fg.setCustomizations(sc.nextLine());
         BillGenerator bg=new BillGenerator();
         bg.setFg(fg);
-        System.out.println(bg);}
-        catch (InputMismatchException|NumberFormatException e){
+        System.out.println(bg);
+
+        BillGenerator bgCopy=(BillGenerator)bg.clone();
+            System.out.println("Coming from clone object"+bgCopy);
+        }
+
+        catch (InputMismatchException|NumberFormatException|CloneNotSupportedException e){
             SimpleDateFormat sd= new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
             Date dt=new Date();
             System.out.println(e +" at time "+sd.format(dt));
         }
+
+
+
 
     }
 }

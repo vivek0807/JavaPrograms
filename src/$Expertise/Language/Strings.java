@@ -93,6 +93,7 @@ public class Strings {
         //System.out.println(new toStringOverride(5,2,"minus 3 is ").toString());
         System.out.println("Hello".compareTo("Hello0"));
       // new showsStringExamples().methodCall();
+        //indexOf method return the position of word/char in String
         //System.out.println(new toStringOverride(5,2,"Difference is 3"));
         Practice p =new Practice("Exemplar Sentence");
         System.out.println(p);

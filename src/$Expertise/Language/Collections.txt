@@ -1,0 +1,4 @@
+TO GET TYPE OF VARIABLE
+//All public classes must be declared in separate file name
+// Stream APi- Predicate supplier Consumer
+var1.getClass().getTypeName()

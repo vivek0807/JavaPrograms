@@ -9,7 +9,7 @@ package $Expertise.Language;
 // THROWS KEYWORD- is just to show the exception that may happen, Actual exception is only caught using TRY & CATCH BLOCK
 
 //AFTER using throw keyword, further lines of code are not executed
-
+// for a method to thorw a CUSTOM EXCEPTION the method must declare the same with THROWS KEYWORD
 //**If the superclass method does not declare an exception, SUBCLASS OVERRIDDEN METHOD CANNOT DECLARE THE CHECKED EXCEPTION but can declare unchecked exception also hirarchy has to maintained going on deeper side or No exception.**//
 class User_Def_Exception extends Exception{
     public User_Def_Exception(String message) {
