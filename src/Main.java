@@ -1,80 +1,52 @@
 
+import java.io.IOException;
 import java.util.*;
-class Bikes implements Comparable<Bikes> {
-     String name;
-     double price;
-     double EnginePower;
+class User_def_Exception extends Exception {
 
-    public Bikes(String name, double price, double enginePower) {
-        this.name = name;
-        this.price = price;
-        EnginePower = enginePower;
+
+    User_def_Exception(String Message){
+        super(Message);
+    }
+    void ThrowableException() throws IOException {
+        throw new IOException();
     }
 
-    @Override
-    public String toString() {
-        return  "name='" + name + '\'' +
-                ", price=" + price +
-                ", EnginePower=" + EnginePower;
+    class InnterClass{
+        int returner(){ ;
+        try{
+            System.out.println("In block");
+           return  1/0;
+        }
+        catch (Exception e){
+            return 5;
+        }
+        };
+
     }
 
-    @Override
-    public int compareTo(Bikes o) {
-        if(this.EnginePower<o.EnginePower)
-            return -1;
-        else if(this.EnginePower> o.EnginePower)
-            return 1;
-        else
-            return 0;
-    }
-}
 
-class Cars{
-    String name;
-    double price;
-    double EnmginePower;
 
-    public Cars(String name, double price, double enmginePower) {
-        this.name = name;
-        this.price = price;
-        EnmginePower = enmginePower;
-    }
-
-    @Override
-    public String toString() {
-        return  "name='" + name + '\'' +
-                ", price=" + price +
-                ", EnmginePower=" + EnmginePower ;
-    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Bikes> bikes = new ArrayList<>();
-        bikes.add(new Bikes("Apache",20000,200));
-        bikes.add(new Bikes("Splendor",1000,100));
-        bikes.add(new Bikes("Dominor",40000,400));
-        bikes.add(new Bikes("Ninja",100000,1000));
 
-       // Collections.sort(bikes);
+        User_def_Exception ud= new User_def_Exception("Hello");
 
-        Comparator<Bikes> bkC= new Comparator<Bikes>() {
-            @Override
-            public int compare(Bikes o1, Bikes o2) {
-                if (o1.price>o2.price)
-                    return 1;
-                else if(o1.price< o2.price)
-                    return -1;
-                else
-                    return 0;
-            }
-        };
+        try{
+            ud.ThrowableException();
 
-        Collections.sort(bikes,bkC);
-        for (Bikes b: bikes) {
-            System.out.println(b);
+        }
+        catch (IOException e){
+          //  return;
+            System.out.println(e);
+        }
+        catch (Exception e){
+
         }
 
+        User_def_Exception.InnterClass IG= ud. new InnterClass();
 
+        System.out.println(IG.returner());
     }
 }
