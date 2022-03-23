@@ -4,6 +4,8 @@ package $Expertise.Language;
 //Comparable- Class implements Comparable interface to start comparing & required implementation of Compareto Method
 //Comparator method defines its own way of comparing without implemeting the Comparable interface and defining its own comparator method
 //Comparator used for custom logic and in case the class does not implement comparable interface
+//Comparable -> Compareto(obj1) method
+//Comparator ->compare(obj1, obj2)
 import java.util.*;
 import java.util.Collections;
 
@@ -32,7 +34,7 @@ class Laptops implements Comparable<Laptops>{
 
     @Override
     public String toString() {
-        return "price=" + price +", brand='" + brand + " " +", ram=" + ram;
+        return "price=" + price +  ", brand='" + brand + " " +", ram=" + ram;
     }
 }
 
@@ -72,7 +74,10 @@ class Bikes{
         this.name = name;
     }
 
-
+    @Override
+    public String toString() {
+        return "Price ->"+price+" Engine Power ->"+EnginePower+" Name -->"+name;
+    }
 }
 public class comps {
     public static void main(String[] args) {
@@ -102,10 +107,13 @@ public class comps {
         for (Laptops l:Al) {
             System.out.println(l);
         }
-        Collections.sort(bk);
+        Collections.sort(bk,bkC);
 
         for (Bikes bkeach: bk) {
 
+        }
+        for (Bikes b:bk ) {
+            System.out.println(b);
         }
 
 
