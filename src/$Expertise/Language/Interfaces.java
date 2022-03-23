@@ -1,11 +1,17 @@
 package $Expertise.Language;
 // -Helps acieve Loose coupling and multiple Inheritance
 //In an interface the methods are public and abstract and Variables are static and final
+//static methods in interfaces must have their definition
 //Eg of tagged interface Serializable, Clonable,Remote etc
-// AS the implementation of methods goes lowe we have to reduce the Access restriction
+// AS the implementation of methods goes lower we have to reduce the Access restriction
 // An Abstract class is just like an Ordinary class with an additional feature of declaring methods without body.
 // When implementing an abstract class that has already implemented an interface // it must describe all the methods from class and interface
 //Functional Interfaces-- Interface having only one method declaration
+
+@FunctionalInterface
+interface FuncI{
+    float funcbal(int n);
+}
 interface Banks{
     float Balance=120000;
     float currentBalace();

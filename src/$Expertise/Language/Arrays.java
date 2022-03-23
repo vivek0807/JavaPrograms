@@ -10,7 +10,7 @@ public class Arrays {
         stringArray[0]="NameMe";
         stringArray[1]="Vivek";
         String strArray[]=stringArray;
-        strArray[0]="Anu";
+        strArray[0]="Cyrus";
         strArray[2]="Name1";
         strArray[3]="Name2";
         strArray[4]="Name3";
