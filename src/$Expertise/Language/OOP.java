@@ -44,7 +44,7 @@ class FoodGarage{
         this.customizations = customizations;
     }
 }
-class MenuBuilder{
+ class MenuBuilder{
     int ketchup=20;
     int myo=50;
     int butter=30;
