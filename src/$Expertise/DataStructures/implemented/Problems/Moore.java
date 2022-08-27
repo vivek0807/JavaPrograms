@@ -12,6 +12,8 @@ class Sieve{
             int mult=2;
             while (i*mult<end) {
                 arr[i*mult]=false;
+
+                
                 mult++;
             }
         }
