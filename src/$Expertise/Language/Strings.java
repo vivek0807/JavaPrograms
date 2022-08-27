@@ -5,7 +5,7 @@ package $Expertise.Language;
 import java.util.Locale;
 /*
 String are stored in Heap area
-String are immutable as same String are made to pint to the same Object in String pool
+String are immutable as same String are made to point to the same Object in String pool
     If Creted using new keyword then they are stored in Heap area
     else in SCP
 
@@ -33,15 +33,17 @@ class toStringOverride{
 
 class showsStringExamples{
 
-    String one=" One";
-    String two="one";
+    String one="One";
+    String two="One";
     String three=new String("Three");
     String sentence="Some day I will get into Product based company";
     char buff[]={'l',',','e','t','s','l','e','a','r'};
     String learn=new String(buff);// CONVERTS ARRAY OF CHARS TO sTRING
+
     void methodCall(){
         System.out.println(three);
-        System.out.println(one==two);
+        System.out.println("Comparison");
+        System.out.println("One ==two "+one==two);
         System.out.println(one.equals(two));
         System.out.println(one.equalsIgnoreCase(two));
         System.out.println(one.charAt(0));
@@ -97,6 +99,13 @@ public class Strings {
         //System.out.println(new toStringOverride(5,2,"Difference is 3"));
         Practice p =new Practice("Exemplar Sentence");
         System.out.println(p);
-        p.manipulates();
+       // p.manipulates();
+        showsStringExamples Examples=new showsStringExamples();
+      //  Examples.methodCall();
+
+        String s=new String("I will give my 100%");
+       s= s.replaceAll("\\s+","");
+        System.out.println(s);
+
     }
 }

@@ -1,52 +1,47 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.stream.Stream;
 
-import java.io.IOException;
-import java.util.*;
-class User_def_Exception extends Exception {
+class IamGeneric<T>{
 
+    T object;
 
-    User_def_Exception(String Message){
-        super(Message);
+    public IamGeneric(T object) {
+        this.object = object;
     }
-    void ThrowableException() throws IOException {
-        throw new IOException();
+    void typePrinter(){
+        System.out.println(object.getClass().getName());
     }
+}
+class Animals{
+    int legs;
+    String color;
+    enum  foody{omnivorous,herbivorous,carnivorous};
 
-    class InnterClass{
-        int returner(){ ;
-        try{
-            System.out.println("In block");
-           return  1/0;
-        }
-        catch (Exception e){
-            return 5;
-        }
-        };
-
+    public Animals(int legs, String color) {
+        this.legs = legs;
+        this.color = color;
     }
-
-
-
 }
 
 public class Main {
     public static void main(String[] args) {
+        HashSet<Animals> hashSet = new HashSet<>();
 
-        User_def_Exception ud= new User_def_Exception("Hello");
+        hashSet.add(new Animals(4,"white"));
+        hashSet.add(new Animals(4,"white"));
+        hashSet.add(new Animals(4,"white"));
+        hashSet.add(new Animals(4,"white"));
 
-        try{
-            ud.ThrowableException();
+        Stream<Animals> stream=hashSet.stream();
 
-        }
-        catch (IOException e){
-          //  return;
-            System.out.println(e);
-        }
-        catch (Exception e){
+        stream.forEach(i->{
+            System.out.println(i.color);
+        });
 
-        }
-
-        User_def_Exception.InnterClass IG= ud. new InnterClass();
-
-        System.out.println(IG.returner());
     }
-}
+
+    }
+

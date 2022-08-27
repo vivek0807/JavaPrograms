@@ -40,5 +40,7 @@ public class Arrays {
         System.out.println(java.util.Arrays.binarySearch(strArray1,"Filled value"));
         //System.out.println(java.util.Arrays.binarySearch(stringArray,"Vivek"));//Prints the position
 
+
+
     }
 }

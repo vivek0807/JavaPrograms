@@ -34,9 +34,17 @@ class Example2{
     }
 }
 public class StaticEx {
-     static int i=getsint();            //SINCE THIS IS FIRST IN ORDER, CALLS getsInt Directly even if it is @ last
+
+    public static void main(String[] args) {
+
+        Example.fromOtherclass();
+        Example2 e2=new Example2();
+        e2.NoStatic();
+    }
+    static int i=getsint();            //SINCE THIS IS FIRST IN ORDER, CALLS getsInt Directly even if it is @ last
     static {
         System.out.println("DIRECT EXECUTION");     // EXECUTES DIRECTLY
+
 
     }
     static {
@@ -45,12 +53,6 @@ public class StaticEx {
     static int getsint(){
         System.out.println("GetsInt");
         return 0;
-    }
-    public static void main(String[] args) {
-
-        Example.fromOtherclass();
-        Example2 e2=new Example2();
-        e2.NoStatic();
     }
 }
 /*  OUTPUT

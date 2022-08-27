@@ -2,10 +2,23 @@ package $Expertise.Language;
 //COMPARABLE AND COMPARATOR
 
 //Comparable- Class implements Comparable interface to start comparing & required implementation of Compareto Method
-//Comparator method defines its own way of comparing without implemeting the Comparable interface and defining its own comparator method
+//Disadvantage of Comparable is we might need to change the source class code for implementing it
+// Comparator method defines its own way of comparing without implemeting the Comparable interface and defining its own comparator method
 //Comparator used for custom logic and in case the class does not implement comparable interface
 //Comparable -> Compareto(obj1) method
-//Comparator ->compare(obj1, obj2)
+//Comparator ->co  static int i=getsint();            //SINCE THIS IS FIRST IN ORDER, CALLS getsInt Directly even if it is @ last
+//    static {
+//        System.out.println("DIRECT EXECUTION");     // EXECUTES DIRECTLY
+//
+//
+//    }
+//    static {
+//        System.out.println("Order 2");
+//    }
+//    static int getsint(){
+//        System.out.println("GetsInt");
+//        return 0;
+//    }mpare(obj1, obj2)
 import java.util.*;
 import java.util.Collections;
 
@@ -79,6 +92,9 @@ class Bikes{
         return "Price ->"+price+" Engine Power ->"+EnginePower+" Name -->"+name;
     }
 }
+
+
+
 public class comps {
     public static void main(String[] args) {
 
@@ -104,10 +120,11 @@ public class comps {
             }
         };
         Collections.sort(Al);
+
         for (Laptops l:Al) {
             System.out.println(l);
         }
-        Collections.sort(bk,bkC);
+        Collections.sort(bk,bkC);               //Passing collection Array List object and new Comparator object
 
         for (Bikes bkeach: bk) {
 
