@@ -1,24 +1,30 @@
 package $Expertise.DataStructures.implemented;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 
 public class DSPractice {
-    void powerset(String s){
-        int len=s.length();
+ void primeRange(int start,int end){
+     boolean arr[]=new boolean[end];
+     Arrays.fill(arr,true);
+     for (int i = 2; i <Math.sqrt(end) ; i++) {
+         int mult=2;
+         while (i*mult<end){
+            arr[i*mult]=false;
+            ++mult;
+         }
 
-        for (int i = 0; i <(1<<len) ; i++) {
-                String str="";
-            for (int j = 0; j <len ; j++) {
-                if((i&(1<<j))!=0)
-                    str=str+s.charAt(j);
-            }
-            System.out.println(str);
-        }
-    }
+     }
+
+     for (int i = start; i <end ; i++) {
+         if(arr[i]==true)
+             System.out.print(i+" ");
+     }
+ }
     public static void main(String[] args) {
 
         DSPractice dsPractice = new DSPractice();
-        System.out.println((int)Math.pow(2,3));
+        dsPractice.primeRange(2,9);
     }
 }

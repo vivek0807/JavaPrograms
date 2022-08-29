@@ -3,8 +3,15 @@ package $Expertise.Language;
 // -When we begin Thread.start it creates a separate thread and the execution of Main thread keeps on happening
 //-When we put Thread.join the main/master thread is set to wait unless the newly created thread is executed
 //Once the t.join thread is executed fully, the further execution of other thread can proceed
+// When we do thread.start, a new thread is created and run method is executed,which does not happen if run is called directly
+//If we create thread by extending a Thread we cannot extend any other class!!
 
-//
+//Start method CANNOT BE CALLED TWICE AND WILL THROW
+    //IlleagealthreadStateException. Run method can be called twice as no new thread is created in this case
+//Entending thread class creates multiple instances, whereas implementing runnable interface shared same object among threads
+
+// To achieve multithreding using Runnable interface we create Thread Obj and pass the runnable interface class to initiate
+    //the run method.
 class ThreadTask extends Thread{
     public void run() {
         System.out.println("Running from Thread class");
