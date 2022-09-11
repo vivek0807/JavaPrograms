@@ -41,10 +41,34 @@ class ArrayRotate{
     }
 }
 
+class PivotIndex{
+    void pivot(){
+        int arr[]={1,9,1,4,5,6};
+        int sum=0;
+        int len=arr.length;
+        for (int i = 0; i <len ; i++) {
+            sum=sum+arr[i];
+        }
+
+        int rsum=sum;
+        int lsum=0;
+        for (int i =0 ; i <len ; i++) {
+            if (lsum==rsum){
+                System.out.println("The piovt is -> "+(i-1));
+                break;
+            }
+            rsum=sum-lsum;
+            lsum=lsum+arr[i];
+        }
+
+    }
+
+}
 public class arrays {
     public static void main(String[] args) {
-        Kadane kadane=new Kadane();
-        kadane.kadane();
+     PivotIndex pivotIndex = new PivotIndex();
+
+     pivotIndex.pivot();
 
     }
 }

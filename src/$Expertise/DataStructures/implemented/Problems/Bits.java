@@ -25,6 +25,6 @@ class PowersetString{
 public class Bits {
     public static void main(String[] args) {
       PowersetString powersetString = new PowersetString();
-      powersetString.test();
+      powersetString.powerset("abcd");
     }
 }

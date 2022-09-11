@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Explore" uuid="6be4cee2-20de-4e40-9ce7-9cfc34ee4afb">
+    <data-source source="LOCAL" name="ADW@mariamaria.database.windows.net" uuid="422dd95f-1145-42ac-866d-76c60a6f9be5">
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://myexplore.database.windows.net:1433;database=Test</jdbc-url>
+      <jdbc-url>jdbc:sqlserver://mariamaria.database.windows.net:1433;database=ADW</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

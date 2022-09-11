@@ -2,6 +2,29 @@ package $Expertise.DataStructures.implemented.Problems;
 
 import java.util.HashSet;
 
+
+class StringtoNewLine{
+    void breakString(String s,int n){
+        int start=0;
+        int end=n;
+        String str="";
+        while (end<s.length()){
+
+            if(s.charAt(end)!=' ')
+            {
+                while (s.charAt(end)!=' ')
+                    end--;
+            }
+            str=str+s.substring(start,end);
+            str=str+'\n';
+            start=end+1;
+            end=end+n;
+        }
+        str=str+s.substring(start,s.length());
+        System.out.println(str);
+    }
+}
+
 class Powersets{        // PRITING ALL THE SUBSETS OF A GIVE STRING
 
     void  powerset(int index,String str,String curr){
@@ -22,43 +45,34 @@ class Powersets{        // PRITING ALL THE SUBSETS OF A GIVE STRING
 
 
 class Spermutations{
-    void permutate(String s1,String s2){
+    void PrintPermute(String s,int start,int end){                  //GENERATING PERMUTATIONS OF A STRING
 
-        HashSet <String> primary = new HashSet<>();
-
-        for (int i=0;i<s2.length();i++){
-            String s="";
-            for (int j = i; j <(s2.length()+i) ; j++) {
-                int k=j%(s2.length());
-                s=s+s2.charAt(k);
-
-
+        if(start==end)
+            System.out.println(s);
+        else {
+            for (int i = start; i <=end ; i++) {
+                s=swap(s,start,i);
+                PrintPermute(s,start+1,end);
+                s=swap(s,start,i);
             }
-            primary.add(s);
-            StringBuilder sbr=new StringBuilder(s);
-            primary.add(s);
         }
-
-        for (int i=0;i<s1.length();i++){
-            String s="";
-            for (int j = i; j <(s1.length()+i) ; j++) {
-                int k=j%(s1.length());
-                s=s+s1.charAt(k);
-
-
-            }
-
-            StringBuilder sbr=new StringBuilder(s);
-            if(primary.contains(s)||primary.contains(sbr.reverse()))
-                System.out.println("Included");
-        }
-
     }
+
+    String swap(String s,int i,int j){
+        char temp;
+        char arr[]=s.toCharArray();
+        temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+
+        return String.valueOf(arr);
+    }
+
 }
 public class Strings {
 
     public static void main(String[] args) {
-        Powersets powersets=new Powersets();
-        powersets.powerset(-1,"eidboaoo","");
+        StringtoNewLine stringtoNewLine = new StringtoNewLine();
+        stringtoNewLine.breakString("This sentence must be broken into 13 character words which I cannot solve in the exam because of lack of problem solving skills",13);
     }
 }
