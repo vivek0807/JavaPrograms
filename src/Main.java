@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-       List<String> list= Arrays.asList("Hello","Mello","Pello","Khelo");
+       List<String> list= Arrays.asList("Helo","Mello","Pello","Khelo");
 
        String str="";
        list.stream().map(i->i+"  sdfsdf").forEach((String strs)->{
