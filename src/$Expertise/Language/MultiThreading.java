@@ -66,5 +66,8 @@ public class MultiThreading {
         threadOne.start();
         threadOne.join();
         threadTwo.start();
+
+        Thread thread= new Thread(new RunnableTask());
+
     }
 }

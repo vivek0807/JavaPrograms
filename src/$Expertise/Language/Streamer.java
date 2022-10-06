@@ -4,6 +4,10 @@ package $Expertise.Language;
 //TERMINAL OPERATIONS COLLECT FOR-EACH REDUCE
 //Stream can be created with collection.stream() , Stream.of() and Stream builder method
 //EACH FUNCTION OF STREAM can take lambda expression as an input expression
+//DATA manipulators -->.skip(). stream(). findFirst() .sorted(Obj1, Obj2) --> CUstom comaprator
+//Optional is a class that is often used with Stream API that has multiple inbuilt methods to avoid null pointer Exceptions
+//Optional.IfPresent
+//Optional.ofNullable
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

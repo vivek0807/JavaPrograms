@@ -1,33 +1,21 @@
 import java.security.KeyStore;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
 
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
 
-        HashMap<Integer,Integer> hashMap= new HashMap<>();
+       List<String> list= Arrays.asList("Hello","Mello","Pello","Khelo");
 
-        hashMap.put(1,1);
-        hashMap.put(2,1);
-        hashMap.put(3,1);
-        hashMap.put(4,1);
-
-
-
+       String str="";
+       list.stream().map(i->i+"  sdfsdf").forEach((String strs)->{
+           strs=str+strs;
+       });
 
     }
-
     }
+
+
 
