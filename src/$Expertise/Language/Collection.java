@@ -1,6 +1,7 @@
 package $Expertise.Language;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Animals{
     String blood_color;
@@ -137,11 +138,23 @@ class ArrayLists{
 class Hashmmaps {
     //
     void main(){
+        HashMap<String,String> hashMap= new HashMap<>();
+        hashMap.put("a","aloo");
+        hashMap.put("b","tamatar");
+        hashMap.put("c","khira");
+        hashMap.put("d","gajar");
 
-        HashMap<String,Terestials> hashTerres=new HashMap<>();
-        hashTerres.put("Ghoda",new Terestials("red","Kala Ghoda",15,"Moderate",4,false));
 
-        System.out.println(hashTerres.get("Ghoda").name);
+        List<Map.Entry<String,String>> listEntry= new LinkedList<>(hashMap.entrySet());
+
+        Collections.sort(listEntry, new Comparator<Map.Entry<String, String>>() {
+            @Override
+            public int compare(Map.Entry<String, String> o1, Map.Entry<String, String> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+
+        Map<String,String> newHasmap= listEntry.stream().collect(Collectors.toMap(i->i.getKey(), i-> i.getValue()));
     }
 }
 
