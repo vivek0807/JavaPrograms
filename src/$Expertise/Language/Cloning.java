@@ -5,6 +5,7 @@ class Indigo implements Cloneable{
     String name;
     double price;
     int seaths;
+
     String origin;
     String destination;
 

@@ -1,8 +1,70 @@
 package $Expertise.Language;
 
 // Arrays belong to java.util.Arrays class
-public class Arrays {
-    public static void main(String[] args) {
+
+import org.w3c.dom.ls.LSOutput;
+// 1 2 3 4
+class twoDArray{
+    void printRight(int rowpos,int colpos){
+        boolean printing=false;
+        while (colpos<arr[0].length && arr[rowpos][colpos]<Integer.MAX_VALUE){
+            System.out.println(arr[rowpos][colpos]);
+            arr[rowpos][colpos]=Integer.MAX_VALUE;
+            colpos++;
+            printing=true;
+        }
+        if(printing==true)
+            printDown( rowpos, colpos);
+    }
+    void printDown(int rowpos,int colpos){
+       rowpos++;
+       colpos--;
+        boolean printing=false;
+        while (rowpos<arr[0].length && arr[rowpos][colpos]<Integer.MAX_VALUE){
+            System.out.println(arr[rowpos][colpos]);
+            arr[rowpos][colpos]=Integer.MAX_VALUE;
+            rowpos++;
+            printing=true;
+        }
+        if(printing==true)
+            printLeft( rowpos, colpos);
+    }
+    void printLeft(int rowpos,int colpos){
+        rowpos--;
+        colpos--;
+        boolean printing=false;
+        while (colpos>-1&&arr[rowpos][colpos]<Integer.MAX_VALUE){
+            System.out.println(arr[rowpos][colpos]);
+            arr[rowpos][colpos]=Integer.MAX_VALUE;
+            colpos--;
+            printing=true;
+        }
+        if(printing==true)
+            printUp( rowpos, colpos);
+    }
+    void printUp(int rowpos,int colpos){
+        colpos++;
+        rowpos--;
+        boolean printing=false;
+        while (rowpos>-1&&arr[rowpos][colpos]<Integer.MAX_VALUE){
+            System.out.println(arr[rowpos][colpos]);
+            arr[rowpos][colpos]=Integer.MAX_VALUE;
+            rowpos--;
+            printing=true;
+        }
+
+        if(printing==true)
+        {printRight( ++rowpos, ++colpos);
+            System.out.println("Row->"+rowpos+" "+colpos);
+        }
+    }
+    int arr[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    void work(){
+        printRight(0,0);
+    }
+}
+class singleArray{
+    void work(){
         int newArr[];//Declaring an array-No Memory Allocation
         newArr=new int[20];//Memory allocated with size 20 and array initilized with 0s;
 
@@ -39,8 +101,12 @@ public class Arrays {
         java.util.Arrays.fill(strArray1,"Filled value");
         System.out.println(java.util.Arrays.binarySearch(strArray1,"Filled value"));
         //System.out.println(java.util.Arrays.binarySearch(stringArray,"Vivek"));//Prints the position
+    }
+}
+public class Arrays {
+    public static void main(String[] args) {
 
-
-
+        twoDArray twoDArray= new twoDArray();
+        twoDArray.work();
     }
 }

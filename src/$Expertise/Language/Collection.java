@@ -3,6 +3,8 @@ package $Expertise.Language;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
+
 class Animals{
     String blood_color;
     String name;
@@ -137,7 +139,7 @@ class ArrayLists{
 
 class Hashmmaps {
     //
-    void main(){
+    void sortOnvalues(){
         HashMap<String,String> hashMap= new HashMap<>();
         hashMap.put("a","aloo");
         hashMap.put("b","tamatar");
@@ -155,6 +157,18 @@ class Hashmmaps {
         });
 
         Map<String,String> newHasmap= listEntry.stream().collect(Collectors.toMap(i->i.getKey(), i-> i.getValue()));
+    }
+
+    void interateHashmap(){
+        HashMap<Integer,String> hashMap=new HashMap<Integer,String>();
+        hashMap.put(1,"One");
+        hashMap.put(2,"two");
+        hashMap.put(3,"three");
+        hashMap.put(4,"four");
+        hashMap.put(5,"five");
+
+        List<Integer> list=hashMap.keySet().stream().collect(Collectors.toList());
+        System.out.println(list);
     }
 }
 
@@ -205,8 +219,8 @@ class Sets implements Comparator<Marines> {
 public class Collection {
     public static void main(String[] args) {
 
-    Sets sets= new Sets();
-    sets.main();
+   Hashmmaps hashmmaps= new Hashmmaps();
+   hashmmaps.interateHashmap();
 
     }
 

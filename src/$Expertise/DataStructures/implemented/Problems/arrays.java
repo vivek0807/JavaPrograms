@@ -28,7 +28,6 @@ class Kadane{       //Tofind maxsum with subarray
 }
 //Array Rotation
 class ArrayRotate{
-
     void rotate(int d,int arr[]){
         int dup[]=arr;
         int j=0;
@@ -36,8 +35,6 @@ class ArrayRotate{
 
             System.out.println(arr[i%arr.length]);
         }
-
-
     }
 }
 

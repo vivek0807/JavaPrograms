@@ -1,7 +1,6 @@
 package $Expertise.DataStructures.implemented.Problems;
 
 import java.util.Arrays;
-
 class Sieve{
     void primerange(int start,int end){
 

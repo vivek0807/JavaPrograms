@@ -3,7 +3,6 @@ package $Expertise.DataStructures.implemented.Problems;
 //Bigger numbers can also be handled using the BigInteger class
 class Problems{
 
-
     void palindrome(long n){                        //PALINDROME
         long num=n;
         long old=0;

@@ -1,5 +1,5 @@
 package $Expertise.Language;
-// -Helps acieve Loose coupling and multiple Inheritance
+// -Helps achieve Loose coupling and multiple Inheritance
 //In an interface the methods are public and abstract and Variables are static and final
 //static methods in interfaces must have their definition
 //Eg of tagged interface Serializable, Clonable,Remote etc
@@ -11,6 +11,7 @@ package $Expertise.Language;
 @FunctionalInterface
 interface FuncI{
     float funcbal(int n);
+
 }
 interface Banks{
     float Balance=120000;
