@@ -1,24 +1,88 @@
-import $Expertise.Questions.Palindrome;
-
-import java.security.KeyStore;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 
-public class Main {
+class Nodes{
+    int data;
+    Nodes next;
+}
 
-    void powerSet(int index,String str, String curr){
+class LinkedList{
+    int length=0;
+    Nodes head=null;
+    Nodes tail=null;
 
+
+
+
+    void printList(){
+        Nodes current=head;
+
+        while (current!=null){
+
+            System.out.println(current.data);
+            current=current.next;
+        }
     }
 
+    void addAtLast(int data){
+        if(head==null){
+             head=new Nodes();
+             head.next=null;
+            head.data=data;
+            length++;
 
+        }
+        else {
+            Nodes curr=head;
+            while(curr.next!=null){
+                curr=curr.next;
+            }
+            curr.next=new Nodes();
+            curr.next.data=data;
+            length++;
+        }
+    }
+    void reverseList(){
+        Nodes back=null;
+        Nodes cur=head;
+        while (cur!=null){
+            Nodes forward=cur.next;
+            cur.next=back;
+            back=cur;
+            cur=forward;
+        }
+        head=back;
+    }
+    void addAtFirst(int data){
+        if(head==null)
+        {
+            head=new Nodes();
+            head.data=data;
+            length++;
+            tail=head;
+        }
+        else {
+            Nodes newNode= new Nodes();
+            newNode.data=data;
+            newNode.next=head;
+            head=newNode;
+            length++;
+        }
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        int arr[]=new int[5];
-        int abc[]={1,2,3,4,5};
-        int def[][]={{123},{234}};
-
+        LinkedList linkedList= new LinkedList();
+                linkedList.addAtFirst(5);
+                linkedList.addAtFirst(4);
+                linkedList.addAtFirst(3);
+                linkedList.addAtFirst(2);
+                linkedList.addAtFirst(1);
+                linkedList.addAtFirst(0);
+                linkedList.printList();
+        linkedList.reverseList();
+        linkedList.printList();
     }
     }
 
