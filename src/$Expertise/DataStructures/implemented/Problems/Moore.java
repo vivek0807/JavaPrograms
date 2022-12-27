@@ -8,11 +8,11 @@ class Sieve{
         Arrays.fill(arr,true);
 
         for (int i=2;i<Math.sqrt(end);i++){
+
             int mult=2;
             while (i*mult<end) {
                 arr[i*mult]=false;
 
-                
                 mult++;
             }
         }

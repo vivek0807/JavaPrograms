@@ -16,7 +16,7 @@ class Problems{
             System.out.println("Number not a palindrome");
     }
 
-    void factorialzeroes(long n){                  // Trailing zeroes in a factorial
+    void factorialzeroes(long n){// Trailing zeroes in a factorial
         int zeroes=0;
         for (long i = 5; i <=n ; i*=5) {
             zeroes+=(n/i);
