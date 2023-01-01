@@ -5,8 +5,14 @@ import java.util.HashSet;
 /*
 * Remove Duplicate Words Keeping Punctuation marks intact
 * */
+
 public class RemoveDuplicates {
+    public static int sumAll(int... nums){
+        return 0;
+    }
     public static void main(String[] args) {
+
+        RemoveDuplicates.sumAll(1,2,4);
         String s="Are you you. MAd. zero zero, zero";
         HashSet<String> hashSet= new HashSet<>();
         String sarr[]= s.split(" ");
