@@ -2,7 +2,7 @@ package $Expertise.Language;
 
 // Arrays belong to java.util.Arrays class
 
-import org.w3c.dom.ls.LSOutput;
+
 // 1 2 3 4
 class twoDArray{
     void printRight(int rowpos,int colpos){

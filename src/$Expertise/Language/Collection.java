@@ -208,14 +208,6 @@ class Sets implements Comparator<Marines> {
     }
 }
 
-
-
-
-
-
-
-
-
 public class Collection {
     public static void main(String[] args) {
 
