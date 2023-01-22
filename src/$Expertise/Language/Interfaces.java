@@ -6,8 +6,8 @@ package $Expertise.Language;
 // AS the implementation of methods goes lower we have to reduce the Access restriction
 // An Abstract class is just like an Ordinary class with an additional feature of declaring methods without body.
 // When implementing an abstract class that has already implemented an interface // it must describe all the methods from class and interface
-//Functional Interfaces-- Interface having only one method declaration
-
+//Functional Interfaces-- Interface having only one method declaration Runnable, ActionListener, Comparable
+//Functional Interface can have only one function definition i.e DEFAULT method
 @FunctionalInterface
 interface FuncI{
     float funcbal(int n);
