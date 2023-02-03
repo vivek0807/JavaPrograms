@@ -8,7 +8,7 @@ import java.util.Scanner;
 //Post Order-Left Right Node
 
 //{-------BFS-----}
-//Just go at each level
+//Just go at each level.
 class Node{
     int data;
     Node right;
@@ -22,8 +22,6 @@ class Node{
 class TreeKeeper{
 
     Node tree=null;
-
-
 
     void creatTree(int data){
         this.tree=insertnode();
@@ -44,11 +42,21 @@ class TreeKeeper{
 
          return root;
     }
+
+    void Inorder(Node node){
+
+         if(node== null)
+             return ;
+         Inorder(node.left);
+        System.out.println(node.data);
+        Inorder(node.right);
+    }
 }
 
 public class Btree {
     public static void main(String[] args) {
     TreeKeeper treeKeeper= new TreeKeeper();
     treeKeeper.creatTree(5);
+    treeKeeper.Inorder(treeKeeper.tree);
     }
 }
