@@ -15,7 +15,6 @@ Suppliers- These are functional interfaces with GET as default method. We define
 like Math.random to then and fetch it when required
 * */
 
-
 class Predicates{
     void predicates(){
         Predicate<Integer> predicate=i->(i<10);

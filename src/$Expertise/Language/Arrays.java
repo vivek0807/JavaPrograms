@@ -63,6 +63,7 @@ class twoDArray{
         printRight(0,0);
     }
 }
+
 class singleArray{
     void work(){
         int newArr[];//Declaring an array-No Memory Allocation
@@ -103,6 +104,7 @@ class singleArray{
         //System.out.println(java.util.Arrays.binarySearch(stringArray,"Vivek"));//Prints the position
     }
 }
+
 public class Arrays {
     public static void main(String[] args) {
 

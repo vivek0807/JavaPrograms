@@ -8,9 +8,14 @@ package $Expertise.Language;
 // When implementing an abstract class that has already implemented an interface // it must describe all the methods from class and interface
 //Functional Interfaces-- Interface having only one method declaration Runnable, ActionListener, Comparable
 //Functional Interface can have only one function definition i.e DEFAULT method
+//MARKER INTERFACE-Empty interfaces used to indicate a special behaviour of the implemented class-Serializable Clonable Remote
 @FunctionalInterface
 interface FuncI{
     float funcbal(int n);
+
+    default void show(){
+        System.out.println("From default method");
+    }
 
 }
 interface Banks{
