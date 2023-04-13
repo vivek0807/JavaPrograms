@@ -6,12 +6,22 @@ package $Expertise.Language;
 //EACH FUNCTION OF STREAM can take lambda expression as an input expression
 //DATA manipulators -->.skip(). stream(). findFirst() .sorted(Obj1, Obj2) --> CUstom comaprator
 //Optional is a class that is often used with Stream API that has multiple inbuilt methods to avoid null pointer Exceptions
+//WE can use the peek method  to see through the strem pipeline
 //Optional.IfPresent
 //Optional.ofNullable
+
+/*
+* Other stream API important methods
+* groupingBy
+* Distinct
+* joiner
+* maptoObj
+* */
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -27,7 +37,11 @@ class Functionalities{
        // StreamSort(students);
         StreamGroupingBy(students);
     }
-
+    public Map<Character, Long> create() {
+        String word = "Vivek";
+        Map<Character, Long> charFrequency = word.toLowerCase().chars().mapToObj(c-> (char) c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        return charFrequency;
+    }
     static void StreamSort(List<Student> students){
         Stream studentStream =students.stream();
 
@@ -39,15 +53,12 @@ class Functionalities{
                 else return 1;
             }
         }).collect(Collectors.toList());
-
-
     }
 
     static void StreamGroupingBy(List<Student> students){
 
         Stream<Student> streamer= students.stream();
         Map<Integer,List<Student>> groupedStudents=streamer.collect(Collectors.groupingBy(Student::getAge));
-
         System.out.println(groupedStudents);
     }
 }
@@ -115,6 +126,14 @@ class Technique1{
         stream.forEach(e->{
             System.out.println(e);
         });
+    }
+
+    void characterBycharacter(){
+
+        String s="characterbycharacter";
+
+        Stream<String> stringStream=Stream.of(s);
+
     }
 
 

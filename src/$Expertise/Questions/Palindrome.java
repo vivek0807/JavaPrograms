@@ -14,7 +14,6 @@ int store=x;
         else
             return false;
     }
-
 }
 public class Palindrome {
     public static void main(String[] args) {

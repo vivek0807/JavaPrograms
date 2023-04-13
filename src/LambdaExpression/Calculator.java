@@ -13,7 +13,7 @@ interface ITest{
 
 }
 public class Calculator {
-    static Calculate calculate;
+    static  Calculate calculate;
     public static Calculate  performAddition(){
         calculate=(int a,int b)->a+b;
         return calculate;

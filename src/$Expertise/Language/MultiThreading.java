@@ -17,9 +17,27 @@ class ThreadTask extends Thread{
         System.out.println("Running from Thread class");
     }
 
-
 }
 
+
+class ThreadSafe{
+    int increment(int number){
+
+        for (int i = number; i <10 ; i++) {
+            number+=i;
+        }
+        return  number;
+    }
+}
+
+//MAKING A MTHOD THREAD SAFE
+class MakeThreadSafe extends Thread{
+    ThreadSafe threadSafe = new ThreadSafe();
+    public  void  run(){
+        threadSafe.increment(10);
+    }
+
+}
 class RunnableTask implements Runnable{
 
 

@@ -72,7 +72,8 @@ class Spermutations{
 public class Strings {
 
     public static void main(String[] args) {
-        StringtoNewLine stringtoNewLine = new StringtoNewLine();
-        stringtoNewLine.breakString("This sentence must be broken into 13 character words which I cannot solve in the exam because of lack of problem solving skills",13);
+    Spermutations spermutations= new Spermutations();
+    spermutations.PrintPermute("PLONGOI",0,6);
+
     }
 }

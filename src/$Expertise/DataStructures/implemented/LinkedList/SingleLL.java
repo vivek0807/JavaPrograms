@@ -100,6 +100,7 @@ class LinkedList {
     void remove_duplicates(){
         System.out.println("Removing duplicates");
         Node pointer=head;
+
         while (pointer.next!=null){
             if(pointer.data==pointer.next.data){
                 Node connector=pointer.next;
@@ -123,16 +124,16 @@ class LinkedList {
             main=main.next;
             refer=refer.next;
         }
-
         System.out.println("Nth node from the end is"+main.data);
-    } // ref pointer till n then both pointer till null
+    }
+    // ref pointer till n then both pointer till null
 
     void reverselist(){
         if(head.next==null){
             printlist();
         }
         else {
-            Node prev=null;
+            Node prev=null;     //KEY_POINT change the middle node pinter to backward
             Node current=head;
             while(current!=null){
                 Node temp=current.next;

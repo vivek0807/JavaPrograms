@@ -18,7 +18,9 @@ package $Expertise.Language;
 //    static int getsint(){
 //        System.out.println("GetsInt");
 //        return 0;
-//    }mpare(obj1, obj2)
+//    }compare(obj1, obj2)
+
+
 import java.util.*;
 import java.util.Collections;
 

@@ -8,7 +8,6 @@ public class Largest3elements {
         int third=Integer.MIN_VALUE,second=Integer.MIN_VALUE,first=Integer.MIN_VALUE;
 
         for (int i = 0; i <arr.length ; i++) {
-
         if(arr[i]>first){
             third=second;
             second=first;
@@ -20,7 +19,6 @@ public class Largest3elements {
         } else if (arr[i]>third) {
             third=arr[i];
         }
-
         }
 
         System.out.println(third+" "+second+" "+first);
