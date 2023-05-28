@@ -133,7 +133,7 @@ class LinkedList {
             printlist();
         }
         else {
-            Node prev=null;     //KEY_POINT change the middle node pinter to backward
+            Node prev=null;     //KEY_POINT change the middle node pointer to backward
             Node current=head;
             while(current!=null){
                 Node temp=current.next;

@@ -1,5 +1,7 @@
 package $Expertise.Language;
-
+/*
+* USE OF FLATMAP IS TO FLATTEN THE HIRARCHY, e.G ARRAYLIST OF LIST WILL RESULT IN A SIMPLE LIST
+* */
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;

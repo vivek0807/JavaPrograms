@@ -1,6 +1,6 @@
 package $Expertise.Language;
 
-class Singleton{
+class Singleton implements Cloneable{
 
     public static Singleton current_state=null;
 
@@ -26,6 +26,8 @@ class Singleton{
 public class SingletonClass {
 
     public static void main(String[] args) {
-        System.out.println( Singleton.Initilizer());
+        Singleton sc = Singleton.Initilizer();
+        System.out.println(sc.hashCode());
+//        Singleton copy =
     }
 }

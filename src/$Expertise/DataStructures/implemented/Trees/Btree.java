@@ -48,8 +48,8 @@ class TreeKeeper{
          if(node== null)
              return ;
          Inorder(node.left);
-        System.out.println(node.data);
-        Inorder(node.right);
+         System.out.println(node.data);
+         Inorder(node.right);
     }
 }
 

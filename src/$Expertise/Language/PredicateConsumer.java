@@ -13,7 +13,7 @@ PREDICATES HAVE some inbuilt functions like Test, Negate isEqual or and
 CHAINING METHODS using AND,OR methods
 There return type is also a functional Interface
 
-Consumers- This are functional interfaces with default method as ACCEPT. They can be assigned any
+CConsumers- This are functional interfaces with default method as ACCEPT. They can be assigned any
 function and data passed to that function will be interpreted such as throwing out put or doing filter.
 CHAINING METHODS-> andThen
 

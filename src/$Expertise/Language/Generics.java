@@ -1,5 +1,5 @@
 package $Expertise.Language;
-//Java generics addan additional parameter to class so that it can recive the dataType of the new object or variable and
+//Java generics add an additional parameter to class so that it can recive the dataType of the new object or variable and
 //work according to that
 
 class Printer <I,S,D>{

@@ -1,0 +1,2 @@
+package $Expertise.DesignPatternCode;
+

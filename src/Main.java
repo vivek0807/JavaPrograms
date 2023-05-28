@@ -17,17 +17,13 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
        // Try Kadane's Algo
-        int max=Integer.MIN_VALUE;
-        int array[]={1,2,3,4,5,6,-1,-500,201,1};
-        int sum=0;
-        for (int i = 0; i < array.length ; i++) {
-            sum+=array[i];
-            if(sum<=-1)
-                sum=0;
-            max=Math.max(sum,max);
+        List<Character> list= new ArrayList<>();
+        list.add('a');
+        list.add('b');
+        list.add('c');
+        list.add('d');
 
-        }
-        System.out.println(max);
+        Map<Character,Long> hashMap=list.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
     }
 
  }
