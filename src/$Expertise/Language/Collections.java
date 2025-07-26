@@ -4,7 +4,6 @@ package $Expertise.Language;
 // AabstractCollection Class is an Abstract class that facilitates implementation of custom Collection
 //Iterator & size class needs to be overriden but rest of the methods are implemented!
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -146,7 +145,7 @@ class CustomCollection<T> extends AbstractCollection<T> {
     }
 
     @Override
-    public @NotNull Iterator<T> iterator() {
+    public Iterator<T> iterator() {
         return arrayList.iterator();
     }
 
