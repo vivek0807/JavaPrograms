@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 public class BombDiffusal {
+
     public static void main(String[] args) {
 
         int[] nums={2,4,9,3};
