@@ -10,16 +10,22 @@ package $Expertise.DesignPatternCode.Creational;
  * <li>Concrete Creator</li>
  * <li>Product </li>
  * <li>Concrete Product </li>
+ * <h2>In the below example</h2>
+ * <li>Vehicle -> TwoWheeler , Fourwheeler</li>
+ * <li>VehicleFactory -> TwoWheelerfactory, FourWheelerFactory<li/>
+ * <li>The create Method in both the factories creates One tye of Vehicle and returns</li>
+ * <li>The factory client class Takes parameter for the kind of factory to be used keep as Main VahicleFactorytype as datatype</li>
+ * <li>It hold the Vehicle dataType, after taking the factory as input, it calls the create method</li>
  */
 // Creator
  abstract class Vehicle{
-   abstract void createVehicle();
+   abstract void showVehicle();
 }
 // Concreate Creators
 class TwoWheeler extends Vehicle{
 
     @Override
-    void createVehicle() {
+    void showVehicle() {
         System.out.println("Created two Wheeler Vehicle");
     }
 }
@@ -27,7 +33,7 @@ class TwoWheeler extends Vehicle{
 class FourWheeler extends Vehicle{
 
      @Override
-    void createVehicle(){
+    void showVehicle(){
          System.out.println("Four Wheeler Created");
      }
 }
@@ -72,6 +78,6 @@ public class FactoryDesignPattern {
         VehicleFactory twoWheelerFactory= new TwoWheelerFactory();
         FactoryClient twowheelerFactoryCleint= new FactoryClient(twoWheelerFactory);
         Vehicle twoWheeler= twowheelerFactoryCleint.getVehicle();
-        twoWheeler.createVehicle();
+        twoWheeler.showVehicle();
     }
 }
