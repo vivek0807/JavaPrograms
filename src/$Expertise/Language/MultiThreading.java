@@ -15,10 +15,7 @@ package $Expertise.Language;
 //VOLATILE :: this does not guarentee atomicity the latest values updated will be shown
 //EXECUTOR SERVICE -->This is an Interface which is used to execute on threads in a async manner.It helpes in maintaining a pool of thread
 // and assign them a task.// TODO it queues up the task when number of current thread is not available
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.locks.ReentrantLock;
+
 
 class Firstcall {
 
@@ -53,7 +50,6 @@ public class MultiThreading {
                     System.out.println("From sencond Thread "+Firstcall.a_fixed_number);
                     Thread.sleep(40);
 
-
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -63,7 +59,7 @@ public class MultiThreading {
         Thread thread1= new Thread(runnable);
         Thread thread= new Thread(runnable1);
         thread.start();
-        thread1.start();
+        thread1.join();
        System.out.println(Firstcall.a_fixed_number);
     }
 }

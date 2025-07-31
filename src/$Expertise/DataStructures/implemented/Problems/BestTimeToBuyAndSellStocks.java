@@ -49,6 +49,6 @@ public class BestTimeToBuyAndSellStocks {
         System.out.println(profit);
     }
     public static void main(String[] args) {
-      appraoch3whenMultipleTrancastionsAreAllowed();
+      approachTwo();
     }
 }

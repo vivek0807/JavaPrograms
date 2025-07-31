@@ -41,6 +41,41 @@ class MergeTwoSortedList{
         return newList.next;
     }
 }
+class AddTwoNumebrs{
+    /**
+     *<h1>Adding two numbers from linkedList</h1>
+     * <li>Create a new Node</li>
+     * <li>Iterate through end of both the LLs</li>
+     * <li>add carry to sum and then add the value of the node with the sum</li>
+     * <li>Separate out carry and sum</li>
+     * <li>If carry remains one at the end add and extra node with 1 at the end of the list</li>
+     */
+    public Node addTwoNumbers(Node listOne,Node listTwo){
+        Node addedNumber= new Node(0,null);
+        Node pointer=addedNumber;
+        int carry=0;
+        while (listOne!=null || listTwo!=null){
+            int sum=carry;
+            if (listOne!=null){
+                sum=sum+ listOne.val;
+                listOne=listOne.next;
+            }
+            if (listTwo!=null){
+                sum=sum+ listTwo.val;
+                listTwo=listTwo.next;
+            }
+
+            carry=sum/10;
+            sum=sum%10;
+            pointer.next=new Node(sum,null);
+            pointer=pointer.next;
+        }
+        if (carry==1)
+            pointer.next=new Node(1,null);
+
+        return addedNumber;
+    }
+}
 class LinkedList {
     int length;
     Node head;
@@ -241,10 +276,10 @@ public class SingleLL {
 //
 //        linkedList.printlist();
 
-        Node list1=new Node(1,new Node(2,new Node(4,null)));
-        Node list2= new Node(1,new Node(3,new Node(4,null)));
+        Node list1=new Node(1,new Node(1,new Node(1,null)));
+        Node list2= new Node(1,new Node(1,new Node(1,null)));
 
-        Node node = new MergeTwoSortedList().mergeTwoSortedList(list1,list2);
+        Node node = new AddTwoNumebrs().addTwoNumbers(list1,list2);
         new LinkedList().printlist(node);
 
 

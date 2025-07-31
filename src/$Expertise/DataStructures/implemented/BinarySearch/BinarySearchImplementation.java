@@ -121,6 +121,13 @@ public class BinarySearchImplementation {
         return -1;
     }
 
+    /**
+     *<h3>Peek element is defined when on both the sides we have a lower value element than the middle element</h3>
+     * <h3>Approach</h3>
+     * <li>Need to compare which side has lower value element than the middle element</li>
+     * <li>if left is greater reduce right to mid-1</li>
+     * <li>if right is greater increase left to mid +1</li>
+     */
     static int findPeakElement( int arr[]){
 
         int left=0;
