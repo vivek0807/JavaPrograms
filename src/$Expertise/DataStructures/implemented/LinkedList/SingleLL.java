@@ -132,7 +132,7 @@ class LinkedList {
     }
 
     boolean findLoop(){
-        HashSet hashSet =new HashSet();
+        HashSet<Node> hashSet =new HashSet<>();
         Node pointer=head;
         while (pointer.next!=null){
             if(hashSet.contains(pointer))

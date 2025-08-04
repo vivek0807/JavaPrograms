@@ -1,15 +1,28 @@
 import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.stream.Stream;
 
+class Node{
+    int val;
+    Node next;
+    Node(int val, Node node){
+        this.val=val;
+        this.next= node;
+    }
+}
 public class Main {
     public static void main(String[] args) throws IOException {
-        int[] nums={5,7,1,4};
-        ExecutorService executorService= Executors.newFixedThreadPool(6);
 
+        Node head= new Node(1, new Node(2,new Node(3,new Node(4,new Node(5,null)))));
+
+        Node fast=head;
+        Node slow=head;
+
+        while (fast.next!=null){
+           // slow=slow.next;
+            fast=fast.next;
+        }
+
+        System.out.println(fast.val);
+        System.out.println(slow.val);
     }
 }
 
