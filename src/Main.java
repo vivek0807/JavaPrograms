@@ -9,8 +9,8 @@ class Node{
     }
 }
 public class Main {
-    public static void main(String[] args) throws IOException {
 
+    public static void main(String[] args) throws IOException {
         Node head= new Node(1, new Node(2,new Node(3,new Node(4,new Node(5,null)))));
 
         Node fast=head;
