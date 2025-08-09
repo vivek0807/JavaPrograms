@@ -5,20 +5,25 @@ import java.util.Arrays;
 public class ThreeSum {
     public static void main(String[] args) {
 
-        int[] arr={1,2,5,9,8,1,10,4,0};
+        int[] arr={1,2,5,9,8,1,10,4,9};
         int target=19;
         Arrays.sort(arr);
-        int left=0;
-        int right=arr.length-1;
 
-        for(int i=left;i<arr.length;i++){
+        for (int i = 0; i < arr.length-2 ; i++) {
+            int right=arr.length-1;
+            int left=i+1;
+            int subTarget=target-arr[i];
 
-            int j=i+1;
-            int k=arr.length-1;
-            while(left<right){
-
+            while (left<right){
+                if (arr[left]+arr[right]>subTarget)
+                    right--;
+                else if (arr[left]+arr[right]<subTarget)
+                    left++;
+                else if (arr[left]+arr[right]==subTarget) {
+                    System.out.printf("%d %d %d \n",arr[i],arr[left],arr[right]);
+                   break;
+                }
             }
-
         }
 
     }
