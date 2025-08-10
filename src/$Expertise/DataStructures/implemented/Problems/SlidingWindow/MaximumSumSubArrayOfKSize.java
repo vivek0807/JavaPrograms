@@ -3,7 +3,7 @@ package $Expertise.DataStructures.implemented.Problems.SlidingWindow;
 import java.util.HashMap;
 
 /**
- * <h1>Find the maximum sum of a sub Array of size K  in a given Array</h1>
+ * <h1>Find the maximum sum of a sub Array of size K  in a given Array given all the elements are distinct</h1>
  * <h2>Approach:- </h2>
  * <li>Sliding window with hashMap</li>
  * <li>Start with iterating on each of the elements and updating the current sum & increasing the count of the character in hashMap</li>
