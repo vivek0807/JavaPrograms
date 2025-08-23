@@ -1,4 +1,7 @@
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
 
 class Node{
     int val;
@@ -11,18 +14,18 @@ class Node{
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Node head= new Node(1, new Node(2,new Node(3,new Node(4,new Node(5,null)))));
-
-        Node fast=head;
-        Node slow=head;
-
-        while (fast.next!=null){
-           // slow=slow.next;
-            fast=fast.next;
+        int[] arr1 = {1, 3, 5, 0, 0, 0};
+       int target=8;
+        HashMap<Integer,Integer> hashMap= new HashMap<>();
+        int diff=0;
+        for (int i = 0; i < arr1.length ; i++) {
+            diff=target-arr1[i];
+            if (hashMap.containsKey(diff)){
+                System.out.println(arr1[i]+","+arr1[hashMap.get(diff)]);
+            }
+            else
+                hashMap.put(diff,i);
         }
-
-        System.out.println(fast.val);
-        System.out.println(slow.val);
     }
 }
 

@@ -3,7 +3,6 @@ package $Expertise.DataStructures.implemented.Problems;
 public class FirstSignleOccurence {
     public static void main(String[] args) {
         String str="haaabbbcccddeffg";
-
         int arr[]=new int[200];
 
         for (int i = 0; i <str.length() ; i++) {

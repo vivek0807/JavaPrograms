@@ -37,7 +37,7 @@ public class GenerateParentheses {
 
     }
     public static void main(String[] args) {
-            generateParentheses(0,0,1);
+            generateParentheses(0,0,3);
         ArrayList<String> returnAns= new ArrayList<>(finalList);
         stack.delete(0,stack.length());
         finalList.clear();

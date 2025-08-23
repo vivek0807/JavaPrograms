@@ -1,4 +1,4 @@
-
+package $Expertise.DataStructures.implemented.DynamicProgramming;
 /**
 Longest common subsequence
 use of dp
@@ -18,7 +18,7 @@ public class LongestCommonSubsequence {
 		String s1 = "abcd";
 		String s2 = "abc";
 		
-		int dp[][]= new int[s1.length()+1][s2.length()+1];
+		int[][] dp= new int[s1.length()+1][s2.length()+1];
 		
 		for(int i=1 ; i<=s1.length();i++){
 			for (int j=1; j<=s2.length();j++){

@@ -27,7 +27,6 @@ public class Permutations {
                 continue;
             tempList.add(number);
             generatePermutations(finalList,nums,tempList);
-
             tempList.removeLast();
         }
 
