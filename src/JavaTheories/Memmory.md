@@ -19,7 +19,11 @@
       - Survivor space
     - Old Generation, that stores old objects usually Objects that survive multiple GC are promoted here
     - Meta gen introduced in jdk 8 + where class meta data is stored
-  
+      
+  ##### Other spaces
+  - Method Area-Unlike the heap, which holds individual object instances, the method area is used to store class-level information that is shared across all instances of a class and all threads within the application and shared across all threads.
+  - Program counter-the PC register is concerned with instruction-level control: keeping track of which bytecode instruction a thread should execute next.
+  - Native method stack- used for instructions that are beyond JVM's capabilities and handles the control to OS like executing a C code or hardware acceleration code.
 #### MEMORY LEAK CAUSES AND REMEDY
 - A memory leak can happen if Objects not in use but still they are referenced somehow and GC is not able to collect it
 - Some other common causes are :
