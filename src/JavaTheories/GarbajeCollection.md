@@ -40,3 +40,6 @@ stack memory, the garbage  collector starts cleaning up the heap.
 - Mark & Sweep Compact memory
 - Concurrent M&S. All dynamic
 - Serial and Parallel GC(Multi Core)
+#### Ways to trigger go manually
+- call System.runFinalze()
+- Assign null to variables.
