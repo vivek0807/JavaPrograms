@@ -19,11 +19,8 @@
       - Survivor space
     - Old Generation, that stores old objects usually Objects that survive multiple GC are promoted here
     - Meta gen introduced in jdk 8 + where class meta data is stored
-      
-  ##### Other spaces
-  - Method Area-Unlike the heap, which holds individual object instances, the method area is used to store class-level information that is shared across all instances of a class and all threads within the application and shared across all threads.
-  - Program counter-the PC register is concerned with instruction-level control: keeping track of which bytecode instruction a thread should execute next.
-  - Native method stack- used for instructions that are beyond JVM's capabilities and handles the control to OS like executing a C code or hardware acceleration code.
+    - Permanent Gen-Consists of JVM metadata
+  
 #### MEMORY LEAK CAUSES AND REMEDY
 - A memory leak can happen if Objects not in use but still they are referenced somehow and GC is not able to collect it
 - Some other common causes are :
@@ -70,4 +67,7 @@ The string pool is a separate space in heap memory that is used only to store St
     - No new Objects are created every time.
     - GC never cleans the String pool
     - Since Most Strings are normal literals and are created normally during log creation or variable assignment, String pool prevents duplicacy
-- https://www.baeldung.com/java-reference-types#:~:text=In%20this%20article%2C%20we%20explored,references%20for%20fine%2Dgrained%20finalization.
+
+##### JIT Complier in JVM 
+- The JIT compliler in JVM helps with faster execution by directly converting the byte code to native machine code.
+  this actually saves time that is required in memory analysis,reduction of memory access by register allocation just like a static compiler

@@ -1,6 +1,5 @@
-package $Expertise.DataStructures.implemented.Problems;
+package $Expertise.DataStructures.implemented.Problems.BackTracking;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 

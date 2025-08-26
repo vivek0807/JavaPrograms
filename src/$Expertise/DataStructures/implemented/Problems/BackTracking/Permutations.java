@@ -1,9 +1,9 @@
-package $Expertise.DataStructures.implemented.Problems;
+package $Expertise.DataStructures.implemented.Problems.BackTracking;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+  /**
  * <h1>Generate All the permutations of a given Array</h1>
  * <h2>Approach</h2>
  * <li>Base case -when temp list size gets equal to the main array size</li>

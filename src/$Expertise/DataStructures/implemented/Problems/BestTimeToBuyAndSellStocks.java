@@ -22,9 +22,7 @@ public class BestTimeToBuyAndSellStocks {
                 max=maxPrices[i]-stockPrices[i];
         }
         System.out.println(max);
-        //TC. O(2N)
-        //S.C- O(N)
-        //Utilization of 2nd array to store max results
+
     }
 
     static void approachTwo(){

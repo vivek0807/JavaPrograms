@@ -1,4 +1,4 @@
-package $Expertise.DataStructures.implemented.Problems;
+package $Expertise.DataStructures.implemented.Problems.BackTracking;
 
 import java.util.ArrayList;
 import java.util.List;

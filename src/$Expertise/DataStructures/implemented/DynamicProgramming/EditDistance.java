@@ -1,5 +1,13 @@
 package $Expertise.DataStructures.implemented.DynamicProgramming;
 
+/**
+ * <h1>Given a String calculate the minimum number of deletions/updations/insertions required to make a string identical to the other</h1>
+ * <h3>Approach</h3>
+ * <li>Create a 2D array of size s1 and s2' length +1</li>
+ * <li>Fill the 1st columns and rows with iterations of length respectively</li>
+ * <li>if the same position character matches then update the diagonally -1 position value as no update has to be done</li>
+ * <li>If the characters don't match then fill the dp with min of the surrounding elements</li>
+ */
 public class EditDistance {
     public static void main(String[] args) {
 

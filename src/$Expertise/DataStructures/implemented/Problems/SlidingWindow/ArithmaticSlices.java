@@ -11,7 +11,7 @@ public class ArithmaticSlices {
     public static void main(String[] args) {
 
 
-        int nums[]={1,2,3,4};
+        int[] nums={1,2,3,4};
         int count=0;
         int res=0;
         for (int i=2;i<nums.length;i++){
