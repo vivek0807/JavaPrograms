@@ -70,3 +70,4 @@ The string pool is a separate space in heap memory that is used only to store St
     - No new Objects are created every time.
     - GC never cleans the String pool
     - Since Most Strings are normal literals and are created normally during log creation or variable assignment, String pool prevents duplicacy
+- https://www.baeldung.com/java-reference-types#:~:text=In%20this%20article%2C%20we%20explored,references%20for%20fine%2Dgrained%20finalization.
