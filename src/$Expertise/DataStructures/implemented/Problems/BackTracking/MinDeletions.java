@@ -1,4 +1,4 @@
-package $Expertise.DataStructures.implemented.DynamicProgramming;
+package $Expertise.DataStructures.implemented.Problems.BackTracking;
 
 /**
  * <h1>Min Deletion required to make a string Palindrome</h1>
