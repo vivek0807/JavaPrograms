@@ -11,18 +11,7 @@ import java.util.Arrays;
  */
 
 public class Rotate2DArray {
-    static void swapArray(int[][] matrix, int i,int j){
-        int temp=matrix[i][j];
-        matrix[i][j]=matrix[j][i];
-        matrix[j][i]=temp;
-    }
-    static void reverseArray(int[][] matrix, int left,int right){
 
-        while (left<right){
-            swapArray(matrix,left,right);
-            left++;right--;
-        }
-    }
     public static void main(String[] args) {
         int [][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
 

@@ -1,0 +1,10 @@
+- Worked on developing in house ad Configuration site that involved communication with GAm and used to have variations in Sponsored ads
+    - Wrote rest APIs, worked with spring security for authorzation and modification of beans.used multothreading where ever possibl
+    - Dealt with data and pagination of queries
+    - Worked on python's Fast API as well  configuring application from scratch and making it fault tolerant
+    - Removed Snyk Vuls too
+    - 
+    - Db used mongo DB
+    - and monitoring with grafana and elastic
+    - 
+- 
