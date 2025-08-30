@@ -1,4 +1,4 @@
-package $Expertise.DesignPatternCode.Creational;
+package $Expertise.DesignPatternCode.Behavorial;
 
 import java.util.Arrays;
 
