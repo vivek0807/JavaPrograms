@@ -16,6 +16,7 @@ package $Expertise.DesignPatternCode.Creational;
  * <li>The create Method in both the factories creates One tye of Vehicle and returns</li>
  * <li>The factory client class Takes parameter for the kind of factory to be used keep as Main VahicleFactorytype as datatype</li>
  * <li>It hold the Vehicle dataType, after taking the factory as input, it calls the create method</li>
+* <li> An abstract factory pattern can be created by adding some if else code and building different factories on basis of condition</li>
  */
 // Creator
  abstract class Vehicle{
