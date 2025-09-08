@@ -30,6 +30,14 @@
   - These are much easier to create and can handle small I/O tasks.
   - These can only execute HTTP calls or JDBC query
   - can be started as Thread.ofVirtual()->{execution code}
+  - The virtual thread is executed by a career thread which is an actual OS level thread. At one time one one virtual thread is executed but is
+   distributed among all CPU cores.
+##### Daemon threads
+- These are background threads that are created as a sub thread of the main user thread.
+- There is no guarentee of its execution as termination of the main thread kills the Daemon thread as well.
+- These are used in monitoring tasks, GC or auto saving tasks.
+- It is created using Thread.setDaemon(true).
+- It actually creates a native OS native level thread but cleans once main thread is closed.
 #### Fork Join Pool
 - Optimized for recursive tasks that can be broken into smaller pieces
 - RecursiveAction<T> that don't return any result
