@@ -104,6 +104,7 @@ class LFUCacheManager{
  * <li>We will have a node that will keep KEY,VALUE AND CURRENT COUNT OF USAGE[FREQUENCY]</li>
  * <LI>We will have two Maps 1. Map <"key,Node>, Map\<"Frequency,Node"></LI>
  * <li>Each time we add an element
+ * <li>EVERY GET OPERATION IS ALSO COUNTED AS A FREQUENCY INCREASE </li>
  * <ul>We first check if the key is existing using the map</ul>
  * <ul>If yes we find the node in the LL with respect to the frequency from the map, we then update the frequency of the node and set a new frequency key in the second map</ul>
  * <ul>If the new frequency key is already present then we aad this new node to last</ul>
