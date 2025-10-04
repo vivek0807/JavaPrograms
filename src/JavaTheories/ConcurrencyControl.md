@@ -11,7 +11,14 @@
   - Submit takes both callable and runnable as a parameter and can return the value or exception
   - Execute only takes runnable hence no return can be captured/ its a fire and forget mechanism.
   - Execute Method may or mey not create a thread and may execute the call later
-
+  - 
+##### Common methods for thread control
+- Thread.sleep(Time in ms)
+- Thread.join - once called, the caller thread has to wait till the second thread execution is complete
+- Thread.interrupt- cancel the execution cooperatively
+- Thread.wait/notify/notifyAll must coordinate on a single shared reference object as wait is Object level method. This must be used in a synced block
+- Thread.yield?
+- CountDownLatch - wait for N things to complete.
 ##### The Pub Sub problem
  - The Consumer and the subscriber both keep running in the infinite while loop
   - everytime the buffer must be checked if it is full, if yes then producer.wait() must be called
@@ -23,7 +30,13 @@
   - Atoimic class - this is a class that supports Some datatypes Like Integer, Object etc, 
     Since Sync keyword or locks block the code part, this class gives certain methods Like addAndGet etc
     to perform same function as sync and lock keyWord
+##### Exchanger 
+- This is class that facilitates exchange of messages between two threads
+- Exchanger.send and exchanger.receive are two methods.They act as two was hand off point.
+- we have the function barrier.await()
 
+##### Cyclic Barrier
+- This concept lets arrive multiple threads at a common point and then releases all the threads for further execution.
 ##### Virtual Thread
   - Virtual threads are just small threads that don't exist in real but they can be used for mini tasks that don't 
     involve much CPu intensive tasks.

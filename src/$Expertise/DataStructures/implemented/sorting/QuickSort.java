@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * <h1>Quick Sort Implementation</h1>
  * <h3>Approach</h3>
- * <li>This is a recursion based algorithm with base case end<start</li>
+ * <li>This is a recursion based algorithm with base case end</li>
  * <li>We assume a pivot element </li>
  * <li>We keep a pointer[i] index from where we swap an element that is getting scanned[j]</li>
  * <li> if the scanning element[j] is lesser than Pivot element we swap j with incremented i</li>
