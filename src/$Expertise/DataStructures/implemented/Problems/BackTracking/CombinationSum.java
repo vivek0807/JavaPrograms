@@ -20,7 +20,7 @@ class Solution{
 
         if (remainingArray[startIndex]<=target){
             templist.add(remainingArray[startIndex]);
-            findCombinations(startIndex,remainingArray,target-remainingArray[startIndex],templist,answerArray);
+            findCombinations(startIndex,remainingArray,target-remainingArray [startIndex],templist,answerArray);
             templist.removeLast();
         }
 

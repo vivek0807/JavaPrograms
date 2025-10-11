@@ -1,42 +1,58 @@
 import java.io.*;
 import java.util.HashMap;
 
-/**
- *
- */
-public class Main {
+class OddPrinter implements Runnable{
 
-    //The approach to this problem is that within a given window i.e right -left the highest frequency
-    //character must be lesser than K. in case this happens we shrink the window by incrementing left
-    //And reducing the frequency in the map
-    //At the end we calculate the maximum window size after this operation.
-    public static void main(String[] args) throws IOException {
-        String s = s = "AABABBA";
-        int k = 1;
 
-        HashMap<Character, Integer> freqMap = new HashMap<>();
-        int maxCount = 0, maxLength = 0;
-        int left = 0;
-        /**
-         * Initizalizing the hashMap with frequency of each character
-         */
-        for (int right = 0; right < s.length(); right++) {
-            char ch = s.charAt(right);
-            freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
-
-            maxCount = Math.max(maxCount, freqMap.get(ch));
-            // We target the to remove the character that has maximum number of occurences within a given window
-            //
-            while ((right - left + 1) - maxCount > k) {
-                char leftChar = s.charAt(left);
-                freqMap.put(leftChar, freqMap.get(leftChar) - 1);
-                left++;
+    @Override
+    public void run() {
+            int target=10;
+            for (int i=0;i<target;i++){
+                if (i%2==0)
+                    System.out.println(i);
             }
 
-            maxLength = Math.max(maxLength, right - left + 1);
-        }
-            System.out.println(maxLength);
+    }
+}
 
+class EvenPrinter implements Runnable{
+
+    @Override
+    public void run() {
+        int target=10;
+        for (int i=0;i<target;i++){
+            if (i%2!=0)
+                System.out.println(i);
+        }
+
+    }
+}
+
+
+public class Main {
+
+
+    public static void main(String[] args)  throws IOException {
+
+        Thread t1= new Thread(new OddPrinter());
+        Thread t2= new Thread(new EvenPrinter());
+     try{
+           t1.start();  //prints evens
+           t2.start(); //print odds
+         for (int i = 0; i < 10; i++) {
+             if (i%2==0)
+             {
+                // t1.wait();
+                // t2.notify();
+             }
+             else {
+                 t2.start();
+                 t2.wait();
+                 t1.notify();
+             }
+         }
+     }
+     catch (Exception e){}
     }
 
 }
