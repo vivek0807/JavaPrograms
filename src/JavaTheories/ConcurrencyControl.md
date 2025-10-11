@@ -84,3 +84,9 @@
 - Hashtables have all of their methods synced where as Concurrent HashMaps use a technique called lock stripping
 - The Map is divided internally into parts of 16 
 - Only a specific part of the map is locked
+
+##### Ways to prevent Thread Starvation
+- Choose fair locking using ReentrantLock()- this ensures locking in FIFO order
+- Use Bounded thread pools with TimedOut Locking new ThreadPool(10,20,60, TimeUnit.seconds)
+- Avoid long critical sections and if it is so then better have Thread.sleep() in between to allow other threads.
+- Also can use thread Dumps to see if threads are starved
