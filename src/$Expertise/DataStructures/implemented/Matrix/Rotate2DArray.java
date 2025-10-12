@@ -22,8 +22,8 @@ public class Rotate2DArray {
 
             for (int i=0;i<(right-left);i++){
 
-                int top=left;
-                int bottom=right;
+                int top=left;//right top
+                int bottom=right; //the left bottom
 
                 int topLeft=matrix[top][left+i];
                 matrix[top][left+i]=matrix[bottom-i][left];
