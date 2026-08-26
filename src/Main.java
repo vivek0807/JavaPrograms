@@ -62,6 +62,8 @@ public class Main {
         }
 
         set.forEach(e-> System.out.println(e.toString()));
+        String s="";
+        System.out.println(Arrays.toString(new int[]{0,1}));
     }
 }
 
