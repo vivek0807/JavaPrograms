@@ -1,61 +1,67 @@
 import java.io.*;
-import java.util.HashMap;
+import java.util.*;
 
-class OddPrinter implements Runnable{
 
+class ElemenetsHolder{
+    int first;
+    int second;
+    int third;
+
+    public ElemenetsHolder(int first, int second, int third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
+    }
 
     @Override
-    public void run() {
-            int target=10;
-            for (int i=0;i<target;i++){
-                if (i%2==0)
-                    System.out.println(i);
-            }
+    public boolean equals(Object obj) {
+        ElemenetsHolder elemenetsHolder=(ElemenetsHolder) obj;
 
+        return elemenetsHolder.first==this.first && elemenetsHolder.second==this.second
+                && elemenetsHolder.third==this.third;
     }
-}
-
-class EvenPrinter implements Runnable{
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second, third);
+    }
 
     @Override
-    public void run() {
-        int target=10;
-        for (int i=0;i<target;i++){
-            if (i%2!=0)
-                System.out.println(i);
-        }
-
+    public String toString() {
+        return first+" "+second+" "+third;
     }
 }
-
 
 public class Main {
 
 
-    public static void main(String[] args)  throws IOException {
+    public static void main(String[] args) throws IOException {
 
-        Thread t1= new Thread(new OddPrinter());
-        Thread t2= new Thread(new EvenPrinter());
-     try{
-           t1.start();  //prints evens
-           t2.start(); //print odds
-         for (int i = 0; i < 10; i++) {
-             if (i%2==0)
-             {
-                // t1.wait();
-                // t2.notify();
-             }
-             else {
-                 t2.start();
-                 t2.wait();
-                 t1.notify();
-             }
-         }
-     }
-     catch (Exception e){}
+        int[] arr ={1,3,3,4,5,6,1,2,3,4,5,6,7,8,10};
+
+        Arrays.sort(arr);
+        int first=arr[0];
+        int second=0;
+        int third=arr[arr.length-1];
+        Set<ElemenetsHolder> set= new HashSet<>();
+        int target=9;
+        for (int i=0;i<arr.length-2;i++){
+            int subTarget=target-arr[i];
+            int left=arr[i+1];
+            int right=arr[arr.length-1];
+            while (left<right){
+                if (arr[left]+arr[right]<subTarget)
+                left++;
+                else if(arr[left]+arr[right]>subTarget)
+                    right--;
+                else if (arr[left]+arr[right]==subTarget)
+                {
+                    set.add(new ElemenetsHolder(arr[i],arr[left],arr[right]));
+                break;
+                }
+            }
+        }
+
+        set.forEach(e-> System.out.println(e.toString()));
     }
-
 }
-
 

@@ -15,9 +15,41 @@ package $Expertise.Language;
 //VOLATILE :: this does not guarentee atomicity the latest values updated will be shown
 //EXECUTOR SERVICE -->This is an Interface which is used to execute on threads in a async manner.It helpes in maintaining a pool of thread
 // and assign them a task.// TODO it queues up the task when number of current thread is not available
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+class SemaphoreExample{
+
+    public void showSemaphoreExample() throws InterruptedException {
+        Semaphore semaphore= new Semaphore(10);
+        for (int i = 0; i < 100; i++) {
+            int finalI = i;
+            Thread.startVirtualThread(()->{
+               try {
+                   semaphore.acquire();
+                   System.out.println("Acquiring Lock "+ finalI);
+               }
+               catch (Exception e){
+                   System.out.println(e.getMessage());
+                   Thread.currentThread().interrupt();
+               }
+               finally {
+                  // semaphore.release();
+               }
+            }).join();
+        }
+    }
+
+}
+
+class LockExamples{
+    void ProcessLocks(){
+        ConcurrentHashMap<Long,ReentrantLock> locks= new ConcurrentHashMap<>();
+
+    }
+}
  class OddEvenReentrantLock {
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition oddTurn = lock.newCondition();
@@ -70,7 +102,7 @@ import java.util.concurrent.locks.ReentrantLock;
         }
     }
 
-    public static void main(String[] args) {
+     static void main(String[] args) {
         OddEvenReentrantLock printer = new OddEvenReentrantLock();
 
         Thread oddThread = new Thread(printer::printOdd, "OddThread");
@@ -155,7 +187,7 @@ class OddEvenProblem{
 public class MultiThreading {
      static  int value=0;
     public static void main(String[] args) throws InterruptedException {
-     OddEvenProblem oddEvenProblem= new OddEvenProblem();
-     oddEvenProblem.triggerExecution();
+    SemaphoreExample example= new SemaphoreExample();
+    example.showSemaphoreExample();
     }
 }

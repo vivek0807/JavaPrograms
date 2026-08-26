@@ -66,6 +66,11 @@
  - These are used with locks where as notify and notify all are used with sync blocks
  - can give multiple condition Qs
  - Eg. Lock = new ReentarantLock(), Condition c = lock.condition, c.awat/ c.signal
+##### Locks Vs Semaphores
+ - Semaphores are used to limit how many can run parallelly at one time
+ - Locks are used to determine which thread can operate on a block at a given time(Extension of Sync Blocks)
+ - Better say only one thread can access one record but multiple thread can access different objects
+ - 
 ### Concurrent collections
   - 🤷‍♂️If a collection is modified during iteration, it can throw Concurrent modification exception
   - 🙌Hashmap- Concurrent Hashmap- This enables locking on partial part of map without locking the entire structure
