@@ -6,50 +6,50 @@ import java.util.List;
 class Solution{
 
     public List<Integer> spiralOrder(int[][] matrix) {
-        int horizontalStart=0;
-        int horizontalEnd=matrix.length-1;
-        List<Integer> ans= new ArrayList<>();
-        while (horizontalStart<=horizontalEnd){
-            int verticalStart=horizontalStart+1;
-            int verticalEnd=horizontalEnd-1;
-            System.out.println("");
-            for (int i=horizontalStart;i<=horizontalEnd;i++){
-                ans.add(matrix[verticalStart-1][i]);
-                System.out.print(matrix[verticalStart-1][i]);
-            }
 
-            System.out.println("");
-            for (int i=verticalStart;i<=verticalEnd;i++){
-                ans.add(matrix[i][horizontalEnd]);
-                System.out.print(matrix[i][horizontalEnd]);
-            }
-            System.out.println("");
-            for (int i=horizontalEnd;i>=horizontalStart;i--){
-                ans.add(matrix[verticalEnd][i]);
-                System.out.print(matrix[verticalEnd+1][i]);
-            }
+        int top=0;
+        int bottom=matrix.length-1;
+        int left=0;
+        int right= matrix[0].length-1;
+        ArrayList<Integer> result= new ArrayList<>();
+        while (top<=bottom && left<=right){
+            for (int i = left; i <= right; i++) {
 
-            System.out.println("");
-            for (int i=verticalEnd;i>=verticalStart;i--){
-                ans.add(matrix[i][horizontalStart]);
-                System.out.print(matrix[i][horizontalStart]);
+                result.add(matrix[top][i]);
             }
-            horizontalStart++;
-            horizontalEnd--;
+            top+=1;
+
+            for (int i= top;i<=bottom;i++) {
+            result.add(matrix[i][right]);
+        }
+            right--;
+
+            if (top<=bottom){
+                for (int i=right;i>=left;i--){
+                    result.add(matrix[bottom][i]);
+                }
+               bottom--;
+            }
+            if (left<=right){
+                for (int i=bottom;i>=top;i--) {
+                 result.add(matrix[i][left]);
+                }
+                left++;
+            }
 
         }
-
-       return ans;
+         return result;
+        }
     }
-}
+
 
 public class SpiralMatrix {
     public static void main(String[] args) {
 
         int[][] arr={{1,2,3},{4,5,6},{7,8,9}};
 
+        System.out.println(new Solution().spiralOrder(arr));
 
-        Solution solution = new Solution();
-        solution.spiralOrder(arr);
+
     }
 }
